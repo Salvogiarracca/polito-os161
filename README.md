@@ -1,5 +1,4 @@
 # PoliTO OS/161 Docker
-[![Build Status](https://app.travis-ci.com/marcopalena/polito-os161-docker.svg?token=TwUrTvqp6M7vKrhM3xmD&branch=main)](https://app.travis-ci.com/marcopalena/polito-os161-docker)
 
 A compact Docker image to compile, run and debug the teaching operating system OS/161. Built for the courses "System and Device Programming" (01NYHOV) and "Programmazione di Sistema" (02GRSOV) at Politecnico di Torino. The image is based on Ubuntu 20.04 and contains the following components:
 - OS/161 sources
@@ -42,7 +41,7 @@ If you are using macOs, we suggest you to use Docker Desktop:
 ## Pull the image
 If you are using an x86-64 machine you can pull the pre-built image directly from Docker Hub:
 ```
-docker pull marcopalena/polito-os161:latest
+docker pull salvogiarracca/polito-os161:latest
 ```
 or, with docker compose:
 ```
@@ -85,6 +84,7 @@ If you are using docker compose there is no need to create a volume beforehand. 
 MOUNTPOINT=/path/to/mount/point/
 MOUNTPOINT_TYPE=custom
 ``` 
+Note: be sure that `/path/to/mount/point/` exists before running the `docker compose up -d` command.
 
 When you start the container for the first time as described [below](#run-the-container), the volume will be populated with the content of the `/home/os161user/` folder that comes pre-stored in the container. The volume is then mount in the container so that any change made to the content of that folder will be persisted on the host filesystem. The content of such a folder is the following:
 - `/home/os161user/`
@@ -95,9 +95,9 @@ When you start the container for the first time as described [below](#run-the-co
 ## Run the container
 Run the container mounting the volume `polito-os161-vol` as the home folder of user `os161user`:
 ```
-docker run --volume polito-os161-vol:/home/os161user --name polito-os161 -itd marcopalena/polito-os161 /bin/bash
+docker run --volume polito-os161-vol:/home/os161user --name polito-os161 -itd salvogiarracca/polito-os161 /bin/bash
 ```
-Use the appropriate image name instead of `marcopalena/polito-os161` if you've built the image yourself.
+Use the appropriate image name instead of `salvogiarracca/polito-os161` if you've built the image yourself.
 Alternatively, using docker compose:
 ```
 docker compose up -d

@@ -1,0 +1,3 @@
+*.bak
+polito-os161-vol/*
+!polito-os161-vol/os161/

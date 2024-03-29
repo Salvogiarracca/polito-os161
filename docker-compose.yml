@@ -2,13 +2,13 @@
 version: '3.8'
 services:
   os161:
-    image: marcopalena/polito-os161:latest
+    image: salvogiarracca/polito-os161:latest
     container_name: polito-os161
     stdin_open: true
     build:
       context: .
       cache_from:
-        - marcopalena/polito-os161:latest
+        - salvogiarracca/polito-os161:latest
     environment:
         - MOUNTPOINT=${MOUNTPOINT}
         - MOUNTPOINT_TYPE=${MOUNTPOINT_TYPE}
