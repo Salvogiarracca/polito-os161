@@ -51,6 +51,10 @@
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
 
+// custom includes
+// lab_1
+#include "hello.h"
+
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -209,6 +213,10 @@ void
 kmain(char *arguments)
 {
 	boot();
+
+	#if OPT_HELLO
+	hello("Salvo");
+	#endif
 
 	menu(arguments);
 

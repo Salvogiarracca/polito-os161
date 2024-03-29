@@ -1,3 +1,6 @@
 *.bak
 polito-os161-vol/*
 !polito-os161-vol/os161/
+polito-os161-vol/os161/root/.sockets/*
+*depend*
+*.o
