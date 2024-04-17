@@ -391,8 +391,15 @@ file      main/menu.c
 # lab_1
 #
 
-defoption   hello
-optfile     hello   main/hello.c
+# defoption   hello
+# optfile     hello   main/hello.c
+
+#
+# lab_2
+#
+
+defoption   syscalls
+optfile     syscalls    syscall/file_syscalls.c
 
 ########################################
 #                                      #
