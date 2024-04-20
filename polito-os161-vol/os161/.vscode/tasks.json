@@ -6,7 +6,13 @@
         {
             "label": "Copy Config",
             "type": "shell",
-            "command": "cp ${env:HOME}/os161/src/kern/conf/DUMBVM ${env:HOME}/os161/src/kern/conf/${input:VersionName}",
+            // "command": "cp ${env:HOME}/os161/src/kern/conf/DUMBVM ${env:HOME}/os161/src/kern/conf/${input:VersionName}",
+            "command": "${workspaceFolder}/.vscode/copyconfig.sh",
+            "args": [
+                "${input:OldVersionName}",
+                "${env:HOME}",
+                "${input:VersionName}"
+            ],
             "problemMatcher": []
         },
         {
@@ -47,8 +53,13 @@
     "inputs": [
         {
             "type": "promptString",
+            "id": "OldVersionName",
+            "description": "Old Kernel version name"
+        },
+        {
+            "type": "promptString",
             "id": "VersionName",
-            "description": "Kernel version name"
+            "description": "New Kernel version name"
         }
     ]
 }

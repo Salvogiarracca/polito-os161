@@ -32,7 +32,7 @@
 
 #include "opt-syscalls.h"
 #include <cdefs.h> /* for __DEAD */
-struct trapframe; /* from <machine/trapframe.h> */
+struct trapframe;  /* from <machine/trapframe.h> */
 
 /*
  * The system call dispatcher.
@@ -49,8 +49,7 @@ void enter_forked_process(struct trapframe *tf);
 
 /* Enter user mode. Does not return. */
 __DEAD void enter_new_process(int argc, userptr_t argv, userptr_t env,
-		       vaddr_t stackptr, vaddr_t entrypoint);
-
+							  vaddr_t stackptr, vaddr_t entrypoint);
 
 /*
  * Prototypes for IN-KERNEL entry points for system call implementations.
@@ -61,6 +60,8 @@ int sys___time(userptr_t user_seconds, userptr_t user_nanoseconds);
 
 #if OPT_SYSCALLS
 int sys_write(int fd, const_userptr_t buf, size_t len);
+int sys_read(int fd, userptr_t buf, size_t len);
+int sys_exit(int status);
 #endif
 
 #endif /* _SYSCALL_H_ */
