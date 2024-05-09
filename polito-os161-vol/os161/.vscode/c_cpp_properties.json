@@ -16,7 +16,7 @@
                 "${env:HOME}/os161/src/kern/arch/mips/include",
                 "${env:HOME}/os161/src/kern/fs/semfs",
                 "${env:HOME}/os161/src/kern/fs/sfs",
-                "${env:HOME}/os161/src/kern/compile/prova",
+                // "${env:HOME}/os161/src/kern/compile/prova",
                 "${env:HOME}/os161/src/kern/include/kern",
                 "${env:HOME}/os161/tools/include/gdb",
                 "${env:HOME}/os161/tools/lib/gcc/mips-harvard-os161/4.8.3/plugin/include/c-family",
